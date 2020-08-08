@@ -1,19 +1,46 @@
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
 class bank {
     private:
-    int accNo;
+    int accNo,choice;
     string type,firstName,lastName;
     float bal,handler;
     public:
     bank() {
+    	choice=0;
         bal=0.0;
         accNo=0;
         firstName='-';
         type='-';
     }
+    void main_menu() {
+    	cout<<"\nWelcome to My Bank\n";  
+        accept(); 
+    	while(choice!=4) {
+        	cout<<"\n-- MY BANK --\n";	 	
+		    cout<<"Enter your choice\n";
+		    cout<<"\n1. Deposit";
+		    cout<<"\n2. Withdraw";
+		    cout<<"\n3. Balance";
+		    cout<<"\n4. Exit\n";
+		    cin>>choice;
+		    switch (choice){
+		        case 1: deposit();
+		                break;
+		        case 2: withdraw();
+		                break;
+		        case 3: check_acc();
+		                break;
+		        case 4: exit(0);
+		                break;
+		        default : cout<<"Wrong choice\n";
+		                break;
+        	}
+    	}
+    }		
     void accept() {
         cout<<"\nEnter your account number\n";
         cin>>accNo;
@@ -49,30 +76,6 @@ class bank {
 
 int main() {
     bank b;
-    int choice=0;
-    do {
-        cout<<"\nWelcome to My Bank\n";
-        cout<<"Enter your choice\n";
-        cout<<"1. Create new account";
-        cout<<"\n2. Deposit";
-        cout<<"\n3. Withdraw";
-        cout<<"\n4. Balance";
-        cout<<"\n5. Exit\n";
-        cin>>choice;
-        switch (choice) {
-            case 1: b.accept();
-                    break;
-            case 2: b.deposit();
-                    break;
-            case 3: b.withdraw();
-                    break;
-            case 4: b.check_acc();
-                    break;
-            case 5: exit(0);
-                    break;
-            default : cout<<"Wrong choice\n";
-                    break;
-        }
-    }while(choice!=5);
+	b.main_menu();   
     return 0;
 }
