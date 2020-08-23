@@ -23,14 +23,14 @@ class Date {
             if(isLeapYear(year)) {
             	if(date==29) {
             		month++;
-            		date=1;
+            		date=0;
             	}
             	return (date <= 29);
             }
             else {
             	if(date==28) {
             		month++;
-            		date=1;
+            		date=0;
             	}
             	return (date <= 28);
             }
