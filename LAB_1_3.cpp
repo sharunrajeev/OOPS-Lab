@@ -1,3 +1,11 @@
+/*
+Define a class to represent bank account. Include members like name of
+depositor, account no, Type of account, balance amount in the account.
+Write C++ program with member functions to a) Assign initial values b)
+To deposit an account c) To withdraw an amount after checking the balance
+d) To display name and balance
+*/
+
 #include <iostream>
 #include <cstdio>
 
@@ -17,10 +25,10 @@ class bank {
         type='-';
     }
     void main_menu() {
-    	cout<<"\nWelcome to My Bank\n";  
-        accept(); 
+    	cout<<"\nWelcome to My Bank\n";
+        accept();
     	while(choice!=4) {
-        	cout<<"\n-- MY BANK --\n";	 	
+        	cout<<"\n-- MY BANK --\n";
 		    cout<<"Enter your choice\n";
 		    cout<<"\n1. Deposit";
 		    cout<<"\n2. Withdraw";
@@ -40,7 +48,7 @@ class bank {
 		                break;
         	}
     	}
-    }		
+    }
     void accept() {
         cout<<"\nEnter your account number\n";
         cin>>accNo;
@@ -60,9 +68,9 @@ class bank {
         cout<<"\nYour balance is :"<<bal<<endl;
         cout<<"Enter amount to withdraw\n";
         cin>>handler;
-        if(handler>bal) 
+        if(handler>bal)
             cout<<"Insufficient balance\n";
-        else 
+        else
             bal-=handler;
     }
     void check_acc() {
@@ -76,6 +84,6 @@ class bank {
 
 int main() {
     bank b;
-	b.main_menu();   
+	b.main_menu();
     return 0;
 }
