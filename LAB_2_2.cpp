@@ -22,7 +22,7 @@ int main(){
         if(i==2)
             d[i] = distanceBtwTwoPoints(x[i],y[i],x[0],y[0]);
         else
-            d[i] = distanceBtwTwoPoints(x[i],y[i],x[i+10],y[i+1]);
+            d[i] = distanceBtwTwoPoints(x[i],y[i],x[i+1],y[i+1]);
     if(d[0]<=d[1] && d[0]<=d[2])
         shortest_distance = d[0];
     else if(d[1]<=d[0] && d[1]<=d[2])
