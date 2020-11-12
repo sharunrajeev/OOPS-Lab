@@ -18,17 +18,21 @@ int main(){
     cin>>x[1]>>y[1];
     cout<<"Enter the coordinates of point 3 : ";
     cin>>x[2]>>y[2];
-    for(int i=0;i<2;i++)
+    for(int i=0;i<=2;i++)
         if(i==2)
             d[i] = distanceBtwTwoPoints(x[i],y[i],x[0],y[0]);
         else
             d[i] = distanceBtwTwoPoints(x[i],y[i],x[i+1],y[i+1]);
+    cout<<"\nDistance between points \n";
+    cout<<"1 --- 2 -> "<<d[0]<<endl;
+    cout<<"2 --- 3 -> "<<d[1]<<endl;
+    cout<<"3 --- 1 -> "<<d[2]<<endl;
     if(d[0]<=d[1] && d[0]<=d[2])
         shortest_distance = d[0];
     else if(d[1]<=d[0] && d[1]<=d[2])
         shortest_distance = d[1];
     else
         shortest_distance = d[2];
-    cout<<"Shortest distance between points 1,2,3 is "<<shortest_distance<<" units \n";
+    cout<<"\nShortest distance between points 1,2,3 is "<<shortest_distance<<" units \n";
     return 0;
 }
